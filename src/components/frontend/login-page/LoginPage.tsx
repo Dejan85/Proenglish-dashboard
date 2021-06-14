@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Input, Form, Label } from "src/components/ui";
+import { Container, Input, Form, Label, Button } from "src/components/ui";
 import { useForm } from "react-hook-form";
 import { FormValue } from "./types";
 
@@ -11,7 +11,7 @@ const LoginPage: React.FC = (): JSX.Element => {
     formState: { errors },
   } = useForm<FormValue>();
 
-  console.log("test", watch());
+  // console.log("test", watch());
 
   const onSubmit = (data) => {
     console.log("test", data);
@@ -23,6 +23,14 @@ const LoginPage: React.FC = (): JSX.Element => {
         <Container maxWidth="50rem" column>
           <Label htmlFor="username">Username</Label>
           <Input register={{ ...register("username") }} />
+        </Container>
+        <Container maxWidth="50rem" column>
+          <Label htmlFor="password">Password</Label>
+          <Input register={{ ...register("password") }} />
+        </Container>
+        <Container maxWidth="50rem" column>
+          <Button type="submit">Uloguj se</Button>
+          {/* <Input register={{ ...register("password") }} /> */}
         </Container>
       </Form>
     </Container>
