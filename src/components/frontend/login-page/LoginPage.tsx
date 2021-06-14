@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "src/components/ui";
+import { Container, Input } from "src/components/ui";
 
 const LoginPage: React.FC = (): JSX.Element => {
   return (
