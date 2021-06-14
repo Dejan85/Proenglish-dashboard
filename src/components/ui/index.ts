@@ -1,1 +1,1 @@
-export { Container } from "./main-container";
+export { Container } from "./container";
