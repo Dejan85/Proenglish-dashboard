@@ -11,11 +11,10 @@ export default styled.div<{
   flex-direction: ${(props) => (props.column ? "column" : "row")};
   justify-content: ${(props) =>
     props.justifyContent ? props.justifyContent : "normal"};
-  align-items: ${(props) =>
-    props.justifyContent ? props.justifyContent : "normal"};
+  align-items: ${(props) => (props.alignItem ? props.alignItem : "normal")};
   margin: 0 auto;
   max-width: ${(props) => (props.maxWidth ? props.maxWidth : "")};
   width: calc(100vw - 2rem);
   height: ${(props) => (props.height ? props.height : "")};
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;

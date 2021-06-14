@@ -28,7 +28,11 @@ const LoginPage: React.FC = (): JSX.Element => {
           <Label htmlFor="password">Password</Label>
           <Input register={{ ...register("password") }} />
         </Container>
-        <Container maxWidth="50rem" justifyContent="center">
+        <Container
+          maxWidth="50rem"
+          alignItem="center"
+          justifyContent="space-between"
+        >
           <Button type="submit">Uloguj se</Button>
           <Link href="/">Registruj se</Link>
         </Container>

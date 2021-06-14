@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { FormProps } from "./types";
 
 const FormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   outline: 1px solid red;
-  /* width: 50vw; */
 `;
 
 const Form = ({ onSubmit, children }: FormProps): JSX.Element => {
