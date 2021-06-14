@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const InputWrapper = styled.input``;
 
-const Input = (props): JSX.Element => {
-  return <InputWrapper {...props} />;
+const Input = ({ register }): JSX.Element => {
+  return <InputWrapper {...register} />;
 };
 
 export default Input;
