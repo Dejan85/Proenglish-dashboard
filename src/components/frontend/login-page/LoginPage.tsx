@@ -18,20 +18,25 @@ const LoginPage: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Container maxWidth="50rem" height="50rem">
+    <Container maxWidth="50rem">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Container maxWidth="50rem" column>
-          <Label htmlFor="username">Username</Label>
+          <Label htmlFor="username" padding="0 0 1rem 0">
+            Username
+          </Label>
           <Input register={{ ...register("username") }} />
         </Container>
-        <Container maxWidth="50rem" column>
-          <Label htmlFor="password">Password</Label>
+        <Container maxWidth="50rem" column padding="3rem 0 0 0">
+          <Label htmlFor="password" padding="0 0 1rem 0">
+            Password
+          </Label>
           <Input register={{ ...register("password") }} />
         </Container>
         <Container
           maxWidth="50rem"
           alignItem="center"
           justifyContent="space-between"
+          padding="3rem 0 0 0"
         >
           <Button type="submit">Uloguj se</Button>
           <Link href="/">Registruj se</Link>

@@ -6,7 +6,6 @@ const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  outline: 1px solid red;
 `;
 
 const Form = ({ onSubmit, children }: FormProps): JSX.Element => {

@@ -6,6 +6,7 @@ export default styled.div<{
   justifyContent?: string;
   alignItem?: string;
   maxWidth?: string;
+  padding?: string;
 }>`
   display: flex;
   flex-direction: ${(props) => (props.column ? "column" : "row")};
@@ -16,5 +17,5 @@ export default styled.div<{
   max-width: ${(props) => (props.maxWidth ? props.maxWidth : "")};
   width: calc(100vw - 2rem);
   height: ${(props) => (props.height ? props.height : "")};
-  /* outline: 1px solid red; */
+  padding: ${(props) => (props.padding ? props.padding : "")};
 `;
