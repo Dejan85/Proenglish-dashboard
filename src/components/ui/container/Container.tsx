@@ -17,5 +17,5 @@ export default styled.div<{
   max-width: ${(props) => (props.maxWidth ? props.maxWidth : "")};
   width: calc(100vw - 2rem);
   height: ${(props) => (props.height ? props.height : "")};
-  background-color: red;
+  outline: 1px solid red;
 `;

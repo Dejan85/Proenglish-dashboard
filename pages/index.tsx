@@ -1,13 +1,8 @@
 import React from "react";
-import { Container } from "src/components/ui";
+import { LoginPage } from "src/components/frontend";
 
 const Home: React.FC = (): JSX.Element => {
-  return (
-    <Container height="100vh" column justifyContent="center" alignItem="center">
-      <p>HOME PAGE</p>
-      <p>HOME PAGE</p>
-    </Container>
-  );
+  return <LoginPage />;
 };
 
 export default Home;
