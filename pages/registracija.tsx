@@ -1,7 +1,7 @@
-import React from "react";
+import { RegisterPage } from "src/components/frontend";
 
-const RegisterPage = () => {
-  return <div>Registracija</div>;
+const Registracija = (): JSX.Element => {
+  return <RegisterPage />;
 };
 
-export default RegisterPage;
+export default Registracija;
