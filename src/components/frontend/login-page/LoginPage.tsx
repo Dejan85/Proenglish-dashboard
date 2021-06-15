@@ -11,8 +11,6 @@ const LoginPage: React.FC = (): JSX.Element => {
     formState: { errors },
   } = useForm<FormValue>();
 
-  // console.log("test", watch());
-
   const onSubmit = (data) => {
     console.log("test", data);
   };
@@ -21,15 +19,11 @@ const LoginPage: React.FC = (): JSX.Element => {
     <Container maxWidth="50rem">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Container maxWidth="50rem" column>
-          <Label htmlFor="username" padding="0 0 1rem 0">
-            Username
-          </Label>
+          <Label htmlFor="username">Username</Label>
           <Input register={{ ...register("username") }} />
         </Container>
         <Container maxWidth="50rem" column padding="3rem 0 0 0">
-          <Label htmlFor="password" padding="0 0 1rem 0">
-            Password
-          </Label>
+          <Label htmlFor="password">Password</Label>
           <Input register={{ ...register("password") }} />
         </Container>
         <Container
@@ -39,7 +33,7 @@ const LoginPage: React.FC = (): JSX.Element => {
           padding="3rem 0 0 0"
         >
           <Button type="submit">Uloguj se</Button>
-          <Link href="/">Registruj se</Link>
+          <Link href="/registracija">Registruj se</Link>
         </Container>
       </Form>
     </Container>
