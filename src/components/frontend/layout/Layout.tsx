@@ -7,13 +7,12 @@ const Navigation = dynamic(() =>
 import { useSession } from "next-auth/client";
 
 const Layout: React.FC = ({ children }): JSX.Element => {
-  const [session, loading] = useSession();
-  console.log("test", session);
+  const [session] = useSession();
 
   return (
     <Container height="100vh" justifyContent="center" alignItem="center">
       <Head>
-        {/* <title>{pageTitle}</title> */}
+        <title>Proenglish dashboard</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>

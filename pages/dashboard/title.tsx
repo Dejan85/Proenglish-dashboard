@@ -1,8 +1,12 @@
 import React from "react";
 import { getSession } from "next-auth/client";
+import dynamic from "next/dynamic";
+const Title = dynamic(() =>
+  import("src/components/frontend").then((module) => module.Title)
+);
 
-const Title = () => {
-  return <div>Title page</div>;
+const TitlePage: React.FC = () => {
+  return <Title />;
 };
 
 export async function getServerSideProps(context) {
@@ -22,4 +26,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default Title;
+export default TitlePage;
