@@ -1,6 +1,6 @@
 import { RegisterPage } from "src/components/frontend";
 
-const Registracija = (): JSX.Element => {
+const Registracija: React.FC = (): JSX.Element => {
   return <RegisterPage />;
 };
 
