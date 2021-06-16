@@ -32,7 +32,7 @@ const LoginPage: React.FC = (): JSX.Element => {
   useEffect(() => {
     getSession().then((session) => {
       if (session) {
-        router.push("/dashboard/title");
+        router.replace("/dashboard/title");
       }
     });
   }, [router]);

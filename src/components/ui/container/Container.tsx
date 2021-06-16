@@ -14,8 +14,9 @@ export default styled.div<{
     props.justifyContent ? props.justifyContent : "normal"};
   align-items: ${(props) => (props.alignItem ? props.alignItem : "normal")};
   margin: 0 auto;
-  max-width: ${(props) => (props.maxWidth ? props.maxWidth : "")};
+  max-width: ${(props) => props.maxWidth && props.maxWidth};
   width: calc(100vw - 2rem);
-  height: ${(props) => (props.height ? props.height : "")};
-  padding: ${(props) => (props.padding ? props.padding : "")};
+  height: ${(props) => props.height && props.height};
+  padding: ${(props) => props.padding && props.padding};
+  outline: 1px solid red;
 `;
