@@ -15,9 +15,6 @@ const LoginPage: React.FC = (): JSX.Element => {
   } = useForm<FormValue>();
   const [session, loading] = useSession();
 
-  console.log("test global session", session);
-  // console.log("test loading", loading);
-
   const onSubmit = async ({ email, password }) => {
     const result = await signIn("credentials", {
       redirect: false,
@@ -26,8 +23,6 @@ const LoginPage: React.FC = (): JSX.Element => {
     });
 
     if (!result.error) router.push("/dashboard/title");
-
-    console.log("test", result);
   };
 
   const logoutHandler = (): void => {
@@ -36,14 +31,11 @@ const LoginPage: React.FC = (): JSX.Element => {
 
   useEffect(() => {
     getSession().then((session) => {
-      console.log("test session", session);
-
       if (session) {
-        // ovde ces da uradis redirect
         router.push("/dashboard/title");
       }
     });
-  }, []);
+  }, [router]);
 
   return (
     <Container maxWidth="50rem">

@@ -24,6 +24,8 @@ body {
 `;
 
 function MyApp({ Component, pageProps }) {
+  console.log("test pageProps", pageProps);
+
   return (
     <Provider session={pageProps.session}>
       <GlobalStyle />
