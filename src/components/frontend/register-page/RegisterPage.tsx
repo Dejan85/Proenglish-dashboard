@@ -11,7 +11,21 @@ const RegisterPage: React.FC = (): JSX.Element => {
     formState: { errors },
   } = useForm<FormValue>();
 
-  const onSubmit = (data) => {
+  const onSubmit = async ({ email, password, passwordConfirm }) => {
+    const response = await fetch("/api/auth/signup", {
+      method: "POST",
+      body: JSON.stringify({ email, password, passwordConfirm }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Something went wrong!");
+    }
+
     console.log("test", data);
   };
 
@@ -39,9 +53,9 @@ const RegisterPage: React.FC = (): JSX.Element => {
           justifyContent="space-between"
           padding="3rem 0 0 0"
         >
-          <Link width="100%" margin="2rem 0 0 0" hover href="/registracija">
+          <Button width="100%" type="submit">
             Registruj se
-          </Link>
+          </Button>
         </Container>
       </Form>
     </Container>

@@ -4,13 +4,16 @@ import { hashPassword } from "server/utils/auth";
 async function handler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
-    const { email, password } = data;
+    const { email, password, passwordConfirm } = data;
+
+    console.log("test", email);
 
     if (
       !email ||
-      !email.include("@") ||
+      !email.includes("@") ||
       !password ||
-      password.trim().length < 7
+      password.trim().length < 7 ||
+      password !== passwordConfirm
     ) {
       res.message("Invalid email or password");
       return;
