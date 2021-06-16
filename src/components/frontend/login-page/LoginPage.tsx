@@ -3,8 +3,10 @@ import { Container, Input, Form, Label, Button, Link } from "src/components/ui";
 import { useForm } from "react-hook-form";
 import { FormValue } from "./types";
 import { signIn, useSession, getSession, signOut } from "next-auth/client";
+import { useRouter } from "next/router";
 
 const LoginPage: React.FC = (): JSX.Element => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -23,6 +25,8 @@ const LoginPage: React.FC = (): JSX.Element => {
       password: password,
     });
 
+    if (!result.error) router.push("/dashboard/title");
+
     console.log("test", result);
   };
 
@@ -34,8 +38,9 @@ const LoginPage: React.FC = (): JSX.Element => {
     getSession().then((session) => {
       console.log("test session", session);
 
-      if (!session) {
+      if (session) {
         // ovde ces da uradis redirect
+        router.push("/dashboard/title");
       }
     });
   }, []);

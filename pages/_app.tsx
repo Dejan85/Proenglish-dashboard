@@ -1,5 +1,6 @@
 import { Layout } from "src/components/frontend";
 import { createGlobalStyle } from "styled-components";
+import { Provider } from "next-auth/client";
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -24,12 +25,12 @@ body {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <Provider session={pageProps.session}>
       <GlobalStyle />
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </Provider>
   );
 }
 
