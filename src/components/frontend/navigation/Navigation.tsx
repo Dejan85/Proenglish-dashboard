@@ -1,4 +1,3 @@
-import React from "react";
 import dynamic from "next/dynamic";
 const Nav = dynamic(() =>
   import("src/components/ui").then((module) => module.Nav)

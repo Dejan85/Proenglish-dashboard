@@ -1,11 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 import { NavProps } from "./types";
 
 const NavWrapper = styled.nav`
-  outline: 1px solid red;
   height: 100%;
-  width: 15%;
+  width: 20rem;
+  box-shadow: 0 1px 1rem rgb(26 26 36 / 15%);
 `;
 
 const Nav: React.FC<NavProps> = ({ children }): JSX.Element => {
