@@ -27,7 +27,7 @@ const LinkUi = ({
   hover,
 }: LinkProps): JSX.Element => {
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <AWrapper margin={margin} width={width} hover={hover}>
         {children}
       </AWrapper>

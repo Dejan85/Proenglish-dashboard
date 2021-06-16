@@ -1,8 +1,8 @@
-import React from "react";
+import { useEffect } from "react";
 import { Container, Input, Form, Label, Button, Link } from "src/components/ui";
 import { useForm } from "react-hook-form";
 import { FormValue } from "./types";
-import { signIn } from "next-auth/client";
+import { signIn, useSession, getSession, signOut } from "next-auth/client";
 
 const LoginPage: React.FC = (): JSX.Element => {
   const {
@@ -11,6 +11,10 @@ const LoginPage: React.FC = (): JSX.Element => {
     watch,
     formState: { errors },
   } = useForm<FormValue>();
+  const [session, loading] = useSession();
+
+  console.log("test global session", session);
+  // console.log("test loading", loading);
 
   const onSubmit = async ({ email, password }) => {
     const result = await signIn("credentials", {
@@ -21,6 +25,20 @@ const LoginPage: React.FC = (): JSX.Element => {
 
     console.log("test", result);
   };
+
+  const logoutHandler = (): void => {
+    signOut();
+  };
+
+  useEffect(() => {
+    getSession().then((session) => {
+      console.log("test session", session);
+
+      if (!session) {
+        // ovde ces da uradis redirect
+      }
+    });
+  }, []);
 
   return (
     <Container maxWidth="50rem">
