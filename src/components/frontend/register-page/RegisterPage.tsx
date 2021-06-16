@@ -19,20 +19,19 @@ const RegisterPage: React.FC = (): JSX.Element => {
     <Container maxWidth="50rem">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Container maxWidth="50rem" column padding="3rem 0 0 0">
-          <Label htmlFor="username">Username</Label>
-          <Input register={{ ...register("username") }} />
-        </Container>
-        <Container maxWidth="50rem" column padding="3rem 0 0 0">
           <Label htmlFor="email">Email</Label>
-          <Input register={{ ...register("email") }} />
+          <Input type="email" register={{ ...register("email") }} />
         </Container>
         <Container maxWidth="50rem" column padding="3rem 0 0 0">
           <Label htmlFor="password">Password</Label>
-          <Input register={{ ...register("password") }} />
+          <Input type="password" register={{ ...register("password") }} />
         </Container>
         <Container maxWidth="50rem" column padding="3rem 0 0 0">
           <Label htmlFor="password-confirm">Ponovi password</Label>
-          <Input register={{ ...register("passwordConfirm") }} />
+          <Input
+            type="password"
+            register={{ ...register("passwordConfirm") }}
+          />
         </Container>
         <Container
           maxWidth="50rem"
