@@ -10,7 +10,7 @@ const Layout: React.FC = ({ children }): JSX.Element => {
   const [session] = useSession();
 
   return (
-    <Container height="100vh" justifyContent="center" alignItem="center">
+    <Container justifyContent="center" alignItem="center">
       <Head>
         <title>Proenglish dashboard</title>
         <meta charSet="utf-8" />

@@ -18,4 +18,5 @@ export default styled.div<{
   width: 100vw;
   height: ${(props) => props.height && props.height};
   padding: ${(props) => props.padding && props.padding};
+  /* outline: 1px solid red; */
 `;
