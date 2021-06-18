@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
-    "@types/styled-components": "^5.1.10"
+    "@types/express": "^4.17.12",
+    "@types/styled-components": "^5.1.10",
+    "express": "^4.17.1"
   }
 }
