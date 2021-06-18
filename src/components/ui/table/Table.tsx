@@ -2,8 +2,10 @@ import { Fragment } from "react";
 import { TableWrapper, Tbody, Tr, Td, Th } from "./styles";
 import { Button } from "src/components/ui";
 
-const renderTableData = (pages) => {
-  return pages.map(({ page, title }, index) => {
+const renderTableData = (titles) => {
+  console.log("test titles", titles);
+
+  return titles?.map(({ page, title }, index) => {
     return (
       <Fragment key={index}>
         {index === 0 && (
@@ -26,7 +28,7 @@ const renderTableData = (pages) => {
   });
 };
 
-const Table = ({ titles }) => {
+const Table: React.FC<{ titles: object[] }> = ({ titles }) => {
   return (
     <TableWrapper>
       <Tbody>{renderTableData(titles)}</Tbody>

@@ -1,4 +1,4 @@
-import connectToDatabase from "server/config/dbConnect";
+import connectToDatabase from "@/server/config/connectToDatabase";
 import { hashPassword } from "server/utils/auth";
 
 async function handler(req, res) {

@@ -2,8 +2,6 @@ import TitlesModel from "../models/titlesModel";
 import { Request, Response, NextFunction } from "express";
 
 export const addTitles = async (req: Request, res: Response) => {
-  console.log("test", req.body);
-
   const newTitle = new TitlesModel({
     page: req.body.page,
     title: req.body.title,

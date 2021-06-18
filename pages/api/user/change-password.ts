@@ -1,6 +1,6 @@
 import { hashPassword, verifyPassword } from "server/utils/auth";
 import { getSession } from "next-auth/client";
-import connectToDatabase from "server/config/dbConnect";
+import connectToDatabase from "@/server/config/connectToDatabase";
 
 async function handler(req, res) {
   if (req.method !== "PATCH") {

@@ -1,5 +1,5 @@
 import nc from "next-connect";
-import dbConnect from "server/config/dbConnect";
+import dbConnect from "@/server/config/connectToDatabase";
 import getExams from "server/controllers/exams";
 const handler = nc();
 

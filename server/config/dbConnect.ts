@@ -1,11 +1,16 @@
-import { MongoClient } from "mongodb";
+import mongoose from "mongoose";
 
-async function connectToDatabase() {
-  const client = await MongoClient.connect(process.env.DB_URI, {
+const dbConnect = () => {
+  if (mongoose.connection.readyState >= 1) {
+    return;
+  }
+
+  mongoose.connect(process.env.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
   });
-  return client;
-}
+};
 
-export default connectToDatabase;
+export default dbConnect;

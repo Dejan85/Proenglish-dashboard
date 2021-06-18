@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import connectToDatabase from "server/config/dbConnect";
+import connectToDatabase from "@/server/config/connectToDatabase";
 import { verifyPassword } from "server/utils/auth";
 
 export default NextAuth({
