@@ -13,6 +13,8 @@ const GlobalStyle = createGlobalStyle`
 
 html {
   font-size: 62.5%;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
 }
 
 body {

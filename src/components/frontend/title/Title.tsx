@@ -1,9 +1,6 @@
-import dynamic from "next/dynamic";
-const SubContainer = dynamic(() =>
-  import("src/components/ui").then((module) => module.SubContainer)
-);
+import { SubContainer, Table, Container } from "src/components/ui";
 
-const pages = [
+const titles = [
   { page: "home", title: "Proenglish - home strana" },
   { page: "o nama", title: "Proenglish - o nama strana" },
   { page: "kursevi", title: "Proenglish - kursevi strana" },
@@ -14,23 +11,17 @@ const pages = [
   { page: "kontakt", title: "Proenglish -  kontakt strana" },
 ];
 
-const renderTableData = () => {
-  return pages.map(({ page, title }) => {
-    return (
-      <tr key={page}>
-        <td>{page}</td>
-        <td>{title}</td>
-      </tr>
-    );
-  });
-};
-
 const Title: React.FC = (): JSX.Element => {
   return (
     <SubContainer>
-      <table id="students">
-        <tbody>{renderTableData()}</tbody>
-      </table>
+      <Container
+        maxWidth="150rem"
+        alignItem="center"
+        justifyContent="center"
+        height="100%"
+      >
+        <Table titles={titles} />
+      </Container>
     </SubContainer>
   );
 };
