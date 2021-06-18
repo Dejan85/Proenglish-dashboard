@@ -1,12 +1,7 @@
-import styled from "styled-components";
-
-const TitleWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-`;
+import { TitleWrapper } from "./styles";
 
 const Title: React.FC = () => {
-  return <TitleWrapper>title page</TitleWrapper>;
+  return <TitleWrapper>title body</TitleWrapper>;
 };
 
 export default Title;
