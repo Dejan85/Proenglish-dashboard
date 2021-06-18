@@ -4,3 +4,4 @@ export { Input } from "./input";
 export { Label } from "./label";
 export { Button } from "./button";
 export { Link } from "./Link";
+export { SubContainer } from "./sub-container";
