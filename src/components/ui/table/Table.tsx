@@ -1,11 +1,11 @@
-import React from "react";
+import { Fragment } from "react";
 import { TableWrapper, Tbody, Tr, Td, Th } from "./styles";
 import { Button } from "src/components/ui";
 
 const renderTableData = (pages) => {
   return pages.map(({ page, title }, index) => {
     return (
-      <React.Fragment key={index}>
+      <Fragment key={index}>
         {index === 0 && (
           <>
             <Th>Page</Th>
@@ -21,7 +21,7 @@ const renderTableData = (pages) => {
             <Button type="submit">Edit</Button>
           </Td>
         </Tr>
-      </React.Fragment>
+      </Fragment>
     );
   });
 };
