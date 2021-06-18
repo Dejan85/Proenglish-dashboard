@@ -6,8 +6,6 @@ async function handler(req, res) {
     const data = req.body;
     const { email, password, passwordConfirm } = data;
 
-    console.log("test", email);
-
     if (
       !email ||
       !email.includes("@") ||
