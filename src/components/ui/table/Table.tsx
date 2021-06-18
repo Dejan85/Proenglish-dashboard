@@ -10,7 +10,7 @@ const renderTableData = (pages) => {
           <>
             <Th>Page</Th>
             <Th>Title</Th>
-            <Th width="20rem">Rename title</Th>
+            <Th width="20rem">Edit title</Th>
           </>
         )}
 
