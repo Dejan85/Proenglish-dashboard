@@ -24,3 +24,19 @@ export const getTitles = async (req: any, res: any) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+export const updateTitle = async (req: any, res: any) => {
+  try {
+    const { title, page } = req.body;
+
+    const response = await TitlesModel.findOneAndUpdate(
+      { page },
+      { title },
+      { new: true }
+    );
+
+    res.status(200).json({ message: "Title was changed" });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};

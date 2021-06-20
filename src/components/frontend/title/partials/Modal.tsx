@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Textarea, Button } from "src/components/ui";
 import { useForm } from "react-hook-form";
+import { server } from "config/server";
 
 const ModalContainer = styled.div`
   display: flex;
@@ -21,25 +22,41 @@ const P = styled.p`
   font-size: 2rem;
 `;
 
-const Modal: React.FC<{ modalContent: string; modalHandler: any }> = ({
-  modalContent,
-  modalHandler,
-}): JSX.Element => {
+const Modal: React.FC<{
+  modalContent: { title: string; page: string };
+  modalHandler: any;
+}> = ({ modalContent: { title, page }, modalHandler }): JSX.Element => {
   const {
     register,
     watch,
     formState: { errors },
   } = useForm();
 
-  const fetchChange = () => {
+  const fetchChange = async () => {
     modalHandler();
-    console.log("test", watch("title"));
+    const data = { title: watch("title"), page };
+
+    try {
+      const response = await fetch(`${server}/api/titles/update-title`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const x = await response.json();
+
+      console.log("test", x);
+    } catch (error) {
+      console.log("test", error);
+    }
   };
 
   return (
     <ModalContainer>
       <P>Izmeni title:</P>
-      <Textarea defaultValue={modalContent} rows={4} {...register("title")} />
+      <Textarea defaultValue={title} rows={4} {...register("title")} />
       <Button type="submit" onClick={fetchChange}>
         Submit
       </Button>

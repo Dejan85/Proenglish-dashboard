@@ -4,11 +4,12 @@ import Modal from "./partials/Modal";
 
 const Title: React.FC<{ titles: object[] }> = ({ titles }): JSX.Element => {
   const [showModal, setShowModal] = useState(false);
-  const [modalContent, setModalContent] = useState<string>();
+  const [modalContent, setModalContent] =
+    useState<{ title: string; page: string }>();
 
-  const modalHandler = (title: string): void => {
+  const modalHandler = (title: string, page: string): void => {
     setShowModal((prevModal) => !prevModal);
-    if (title) setModalContent(title);
+    if (title) setModalContent({ title, page });
   };
 
   return (
