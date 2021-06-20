@@ -16,9 +16,14 @@ const ButtonWrapper = styled.button<{ width?: string }>`
   }
 `;
 
-const Button = ({ children, type, width }: ButtonProps): JSX.Element => {
+const Button = ({
+  children,
+  type,
+  width,
+  onClick,
+}: ButtonProps): JSX.Element => {
   return (
-    <ButtonWrapper width={width} type={type}>
+    <ButtonWrapper width={width} type={type} onClick={onClick}>
       {children}
     </ButtonWrapper>
   );
