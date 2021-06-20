@@ -46,8 +46,6 @@ const Modal: React.FC<{
       });
 
       const x = await response.json();
-
-      console.log("test", x);
     } catch (error) {
       console.log("test", error);
     }
