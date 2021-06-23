@@ -40,7 +40,7 @@ const Modal: React.FC<{
 
     if (title) {
       try {
-        const response = await fetch(`${server}/api/titles/update-title`, {
+        const response = await fetch(`${server}${url}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
