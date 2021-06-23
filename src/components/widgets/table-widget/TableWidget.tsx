@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { SubContainer, Table, Container } from "src/components/ui";
 import { Modal } from "src/components/widgets";
-import { TableWidget } from "src/components/widgets";
 
-const Title: React.FC<{ data: object[] }> = ({ data }): JSX.Element => {
+const TableWidget: React.FC<{ data: object[]; url: string }> = ({
+  data,
+  url,
+}): JSX.Element => {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] =
     useState<{ title: string; page: string }>();
@@ -19,7 +21,7 @@ const Title: React.FC<{ data: object[] }> = ({ data }): JSX.Element => {
         <Modal
           modalContent={modalContent}
           modalHandler={modalHandler}
-          url="/api/titles/update-title"
+          url={url}
         />
       )}
       <Container
@@ -34,4 +36,4 @@ const Title: React.FC<{ data: object[] }> = ({ data }): JSX.Element => {
   );
 };
 
-export default Title;
+export default TableWidget;

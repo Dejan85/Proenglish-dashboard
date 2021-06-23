@@ -1,13 +1,14 @@
 import React from "react";
 import { getSession } from "next-auth/client";
 import dynamic from "next/dynamic";
-const Title = dynamic(() =>
-  import("src/components/frontend").then((module) => module.Title)
+const TableWidget = dynamic(() =>
+  import("src/components/widgets").then((module) => module.TableWidget)
 );
 import { server } from "config/server";
+const url = "/api/titles/update-title";
 
 const TitlePage: React.FC<{ titles: object[] }> = ({ titles }) => {
-  return <Title titles={titles} />;
+  return <TableWidget data={titles} url={url} />;
 };
 
 export async function getServerSideProps(context) {

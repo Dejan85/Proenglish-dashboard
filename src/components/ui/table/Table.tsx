@@ -2,8 +2,8 @@ import { Fragment } from "react";
 import { TableWrapper, Tbody, Tr, Td, Th } from "./styles";
 import { Button } from "src/components/ui";
 
-const renderTableData = (titles, onClick) => {
-  return titles?.map(({ page, title, _id: id }, index) => {
+const renderTableData = (data, onClick) => {
+  return data?.map(({ page, title, _id: id }, index) => {
     return (
       <Fragment key={id}>
         {index === 0 && (
@@ -28,13 +28,13 @@ const renderTableData = (titles, onClick) => {
   });
 };
 
-const Table: React.FC<{ titles: object[]; onClick: any }> = ({
-  titles,
+const Table: React.FC<{ data: object[]; onClick: any }> = ({
+  data,
   onClick,
 }) => {
   return (
     <TableWrapper>
-      <Tbody>{renderTableData(titles, onClick)}</Tbody>
+      <Tbody>{renderTableData(data, onClick)}</Tbody>
     </TableWrapper>
   );
 };

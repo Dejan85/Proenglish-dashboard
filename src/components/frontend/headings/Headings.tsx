@@ -1,6 +1,6 @@
 import React from "react";
 
-const Headings = () => {
+const Headings: React.FC = (): JSX.Element => {
   return <div>Headings</div>;
 };
 
