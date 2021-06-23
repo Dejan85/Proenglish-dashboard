@@ -25,7 +25,8 @@ const P = styled.p`
 const Modal: React.FC<{
   modalContent: { title: string; page: string };
   modalHandler: any;
-}> = ({ modalContent: { title, page }, modalHandler }): JSX.Element => {
+  url: string;
+}> = ({ modalContent: { title, page }, modalHandler, url }): JSX.Element => {
   const {
     register,
     watch,
